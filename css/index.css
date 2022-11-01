@@ -22,7 +22,7 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 
 
 /* nav-fixed */
-.nav.fixed {position: fixed; background-color: var(--main-color); border-bottom: 1px solid rgb(231, 231, 231);}
+.nav.fixed {position: fixed; background-color: var(--main-color); border-bottom: 1px solid rgb(231, 231, 231); width: 100vw;}
 
 /* nav-responsible */
 
@@ -40,7 +40,7 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 
 
 
-.nav-box .response-box .app-download-menu {width: fit-content; height: fit-content; border-radius: 10px; background-color: var(--main-color); position: fixed; top: 130%; right: -22px; box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 12px 3px; display: flex; flex-flow: column;}
+.nav-box .response-box .app-download-menu {width: fit-content; height: fit-content; border-radius: 10px; background-color: var(--main-color); position: fixed; top: 130%; right: -3px; box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 12px 3px; display: flex; flex-flow: column;}
 .nav-box .response-box .app-download-menu {display: none;}
 
 .nav-box .response-box .app-download-menu .app-button {width: fit-content; height: fit-content; display: flex; flex-flow: column; align-items: center; padding: 6px; gap: 6px;}
@@ -431,7 +431,7 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 .footer .contents .footer-address p .footer-link {color: #6b7684;}
 
 .footer .contents .footer-menu {width: fit-content; margin-top: 20px;}
-.footer .contents .footer-menu ul {width: 100%; display: flex; flex-flow: row; list-style: none;}
+.footer .contents .footer-menu ul {width: 100%; display: flex; flex-flow: row wrap; list-style: none;}
 .footer .contents .footer-menu ul li {display: block; width: 60px; font-size: 12px; margin-right: 22px; font-weight: bold;}
 .footer .contents .footer-menu ul li:nth-of-type(5) .footer-link {color: #b0b8c1;}
 .footer .contents .footer-menu ul li:nth-of-type(6) .footer-link {color: #b0b8c1;}
@@ -454,6 +454,7 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
 }
 @media screen and (max-width: 640px) {
     body {overflow-x: hidden;}
+    .nav {width: 100vw;}
     .nav-box {overflow-x: initial;}
     .nav .list, .nav .lang {transform: translateY(-50px); transition: transform .2s;}
     .nav .response-box {display: flex; align-items: center; text-indent: 0; opacity: 1; width: fit-content; position: absolute; top: 50%; right: 0; transform: translateY(-50%);}
