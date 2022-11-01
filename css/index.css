@@ -456,7 +456,7 @@ body {width: 100%; font-family: sans-serif; -webkit-font-smoothing: antialiased;
     
     
     body {overflow-x: hidden;}
-    .nav-box {overflow-x: hidden;}
+    .nav-box {overflow-x: initial;}
     .nav .list, .nav .lang {transform: translateY(-50px); transition: transform .2s;}
     .nav .response-box {display: flex; align-items: center; text-indent: 0; opacity: 1; width: fit-content; position: absolute; top: 50%; right: 0; transform: translateY(-50%);}
     
