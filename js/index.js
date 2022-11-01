@@ -5,7 +5,7 @@ $(function() {
         $('.section1 .down-arrow').addClass('on');
         $('.section1 .down-arrow::after').addClass('on');
     }, 1300);
-    
+    console.log($(window).width())
     $(window).resize(function(){
         $(this).scrollTop() = 0;
     })
@@ -178,33 +178,57 @@ $(function() {
 
 
         // section8-width
-        if (sct > 9470) {
-            calc = (sct - 9000)*2.0;
-            // console.log(calc)
-            if (calc < 2100 ) {
-                $('.section8 .contents').css({'width': calc});
-                // console.log('this is calc' + calc)
+        if($(window).width() > 680) {
+            if (sct > 9470) {
+                calc = (sct - 9000)*2.0;
+                // console.log(calc)
+                if (calc < 2100 ) {
+                    $('.section8 .contents').css({'width': calc});
+                    // console.log('this is calc' + calc)
+                }
             }
+        } else {
+            $('.section8 .contents').css({'width': '100%'});
         }
 
         const section9Opacity = () => {
-
-            if(sct < sectionOffset('.section9-contents-1')-1200) {
-                $('.section9-contents-1').css({'opacity': 0});
-                $('.section9-contents-2').css({'opacity': 0});
-                $('.section9-contents-3').css({'opacity': 0});
-            }
-            if (sct >= sectionOffset('.section9-contents-1')-1200) {
-                calc = (sct-10000)/1000 - 1;
-                $('.section9-contents-1').css({'opacity': calc});
-            }
-            if (sct >= sectionOffset('.section9-contents-2')-1200) {
-                calc = (sct-10000)/1000 - 2;
-                $('.section9-contents-2').css({'opacity': calc});
-            }
-            if (sct >= sectionOffset('.section9-contents-3') -1200) {
-                calc = (sct-10000)/1000 - 3.3;
-                $('.section9-contents-3').css({'opacity': calc});
+            if($(window).width() > 680){
+                if(sct < sectionOffset('.section9-contents-1')-1200) {
+                    $('.section9-contents-1').css({'opacity': 0});
+                    $('.section9-contents-2').css({'opacity': 0});
+                    $('.section9-contents-3').css({'opacity': 0});
+                }
+                if (sct >= sectionOffset('.section9-contents-1')- 1200) {
+                    calc = (sct-10000)/1000 - 1;
+                    $('.section9-contents-1').css({'opacity': calc});
+                }
+                if (sct >= sectionOffset('.section9-contents-2')-1200) {
+                    calc = (sct-10000)/1000 - 2;
+                    $('.section9-contents-2').css({'opacity': calc});
+                }
+                if (sct >= sectionOffset('.section9-contents-3') -1200) {
+                    calc = (sct-10000)/1000 - 3.3;
+                    $('.section9-contents-3').css({'opacity': calc});
+                }
+            } else {
+                console.log('window less 680')
+                if(sct < sectionOffset('.section9-contents-1')-1000) {
+                    $('.section9-contents-1').css({'opacity': 0});
+                    $('.section9-contents-2').css({'opacity': 0});
+                    $('.section9-contents-3').css({'opacity': 0});
+                }
+                if (sct >= sectionOffset('.section9-contents-1')-1000) {
+                    calc = (sct-10000)/1000 - 0.4;
+                    $('.section9-contents-1').css({'opacity': calc});
+                }
+                if (sct >= sectionOffset('.section9-contents-2')-1000) {
+                    calc = (sct-10000)/1000 - 1.5;
+                    $('.section9-contents-2').css({'opacity': calc});
+                }
+                if (sct >= sectionOffset('.section9-contents-3')-1000) {
+                    calc = (sct-10000)/1000 - 2.5;
+                    $('.section9-contents-3').css({'opacity': calc});
+                }
             }
         }
         section9Opacity()
